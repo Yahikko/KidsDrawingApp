@@ -3,4 +3,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#FF9AA2AF</color>
+    <color name="unknown">#00000000</color>
+    <color name="yellow">#FFFFFF00</color>
+    <color name="red">#FFFF0000</color>
+    <color name="green">#FF00FF00</color>
+    <color name="blue">#FF0000FF</color>
+    <color name="lollipop">#FF35A79C</color>
+    <color name="skin">#FFFFCC99</color>
+    <color name="random">#FFA349B1</color>
 </resources>
