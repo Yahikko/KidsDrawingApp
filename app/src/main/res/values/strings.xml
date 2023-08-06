@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KidsDrawingApp</string>
+    <string name="change_brush_size">change_brush_size</string>
 </resources>
