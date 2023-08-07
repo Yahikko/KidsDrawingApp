@@ -24,6 +24,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var brushSizeImgBtn: ImageButton
     private lateinit var brushSizeDialog: Dialog
     private lateinit var mImageButtonCurrentPaint: ImageButton
+    private lateinit var ibGallery: ImageButton
+    private lateinit var ibUndo: ImageButton
     private lateinit var colorsLinearLayout: LinearLayout
 
     val openGalleryLauncher: ActivityResultLauncher<Intent> = setOpenGalleryLauncher()
@@ -34,21 +36,21 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         drawingView = findViewById(R.id.drawing_view)
+        drawingView.setBrushSize(5.0f)
+
         brushSizeImgBtn = findViewById(R.id.ib_brush)
         colorsLinearLayout = findViewById(R.id.colors_linear_layout)
+        ibGallery = findViewById(R.id.ib_gallery)
+        ibUndo = findViewById(R.id.ib_undo)
 
         mImageButtonCurrentPaint = colorsLinearLayout[0] as ImageButton
         mImageButtonCurrentPaint.setImageDrawable(
             ContextCompat.getDrawable(this, R.drawable.pallet_pressed)
         )
 
-        drawingView.setBrushSize(5.0f)
         brushSizeImgBtn.setOnClickListener { showBrushSizeChooserDialog() }
-
-        val ibGallery: ImageButton = findViewById(R.id.ib_gallery)
-        ibGallery.setOnClickListener {
-            requestStoragePermission()
-        }
+        ibGallery.setOnClickListener { requestStoragePermission() }
+        ibUndo.setOnClickListener { drawingView.onClickUndo() }
     }
 
     private fun requestStoragePermission() {
